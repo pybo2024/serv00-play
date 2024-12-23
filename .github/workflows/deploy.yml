@@ -30,3 +30,9 @@ jobs:
         run: |
           chmod +x ./revive.sh
           ./revive.sh
+      - name: 删除工作流运行
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          repository: ${{ github.repository }}
+          retain_days: 2
+          keep_minimum_runs: 6
